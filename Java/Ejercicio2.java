@@ -1,17 +1,22 @@
-import javax.swing.*;
+import java.util.Scanner;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
-        int num;
+        Scanner scanner = new Scanner(System.in);
+        int numero;
 
         do {
-            num = Integer.parseInt(JOptionPane.showInputDialog("Ingresa un numero:"));
-            if (num >= 0) {
-                double cuadrado = Math.pow(num, 2);
-                System.out.println("El cuadrado de " + num + " es " + cuadrado);
-            }
-        } while (num >= 0);
+            System.out.print("Introduce un número: ");
+            numero = scanner.nextInt();
 
-        System.out.println("Programa terminado (Numero Negativo no computable).");
+            if (numero > 0) {
+                System.out.println("El número es positivo.");
+            } else if (numero < 0) {
+                System.out.println("El número es negativo.");
+            }
+        } while (numero != 0);
+
+        System.out.println("Fin del programa.");
+        scanner.close();
     }
 }
